@@ -101,6 +101,7 @@ jobs:
             -Denv=${{ github.event.inputs.environment || 'staging' }} \
             -Dbrowser=${{ github.event.inputs.browser || 'chrome' }} \
             -Dheadless=true \
+            -Dremote=false \
             --no-transfer-progress
         env:
           PROD_TEST_USERNAME: ${{ secrets.PROD_TEST_USERNAME }}
@@ -156,6 +157,7 @@ jobs:
             -Denv=${{ github.event.inputs.environment || 'staging' }} \
             -Dbrowser=${{ github.event.inputs.browser || 'chrome' }} \
             -Dheadless=true \
+            -Dremote=false \
             --no-transfer-progress
         env:
           PROD_TEST_USERNAME: ${{ secrets.PROD_TEST_USERNAME }}
