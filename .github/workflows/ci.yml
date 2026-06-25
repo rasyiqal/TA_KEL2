@@ -1,0 +1,200 @@
+name: QA Automation CI
+
+# =============================================================================
+#  GitHub Actions CI Pipeline
+#
+#  Triggers:
+#    - Push to main or develop branch
+#    - Pull Request to main
+#    - Manual trigger (workflow_dispatch) with environment selector
+#
+#  Jobs:
+#    1. build        — compile and validate project
+#    2. smoke-tests  — run @smoke tagged scenarios
+#    3. regression   — run all scenarios (on schedule / manual)
+# =============================================================================
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run full regression every day at 02:00 UTC
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        default: "staging"
+        type: choice
+        options: [ dev, staging, prod ]
+      tags:
+        description: "Cucumber tag filter (e.g. @smoke, @regression)"
+        required: false
+        default: "@smoke"
+      browser:
+        description: "Browser"
+        required: true
+        default: "chrome"
+        type: choice
+        options: [ chrome, firefox, edge ]
+
+# Cancel in-progress runs when a new run is triggered for the same ref
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  JAVA_VERSION: "21"
+  MAVEN_OPTS: "-Xmx2048m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+
+jobs:
+
+  # ============================================================
+  #  Job 1: Build & Validate
+  # ============================================================
+  build:
+    name: Build & Compile
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: "temurin"
+          cache: "maven"
+
+      - name: Compile project
+        run: mvn compile test-compile --no-transfer-progress
+
+      - name: Validate pom.xml
+        run: mvn validate --no-transfer-progress
+
+  # ============================================================
+  #  Job 2: Smoke Tests
+  # ============================================================
+  smoke-tests:
+    name: Smoke Tests
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: "temurin"
+          cache: "maven"
+
+      - name: Run Smoke Tests (JUnit5)
+        run: |
+          mvn test -Psmoke \
+            -Denv=${{ github.event.inputs.environment || 'staging' }} \
+            -Dbrowser=${{ github.event.inputs.browser || 'chrome' }} \
+            -Dheadless=true \
+            --no-transfer-progress
+        env:
+          PROD_TEST_USERNAME: ${{ secrets.PROD_TEST_USERNAME }}
+          PROD_TEST_PASSWORD: ${{ secrets.PROD_TEST_PASSWORD }}
+
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-results-smoke
+          path: target/allure-results
+          retention-days: 7
+
+      - name: Upload ExtentReports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: extent-report-smoke
+          path: reports/extent/
+          retention-days: 7
+
+      - name: Upload Cucumber Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cucumber-report-smoke
+          path: reports/cucumber/
+          retention-days: 7
+
+  # ============================================================
+  #  Job 3: Full Regression (manual or scheduled)
+  # ============================================================
+  regression:
+    name: Full Regression
+    runs-on: ubuntu-latest
+    needs: smoke-tests
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: "temurin"
+          cache: "maven"
+
+      - name: Run Regression Tests
+        run: |
+          mvn test -Pregression \
+            -Denv=${{ github.event.inputs.environment || 'staging' }} \
+            -Dbrowser=${{ github.event.inputs.browser || 'chrome' }} \
+            -Dheadless=true \
+            --no-transfer-progress
+        env:
+          PROD_TEST_USERNAME: ${{ secrets.PROD_TEST_USERNAME }}
+          PROD_TEST_PASSWORD: ${{ secrets.PROD_TEST_PASSWORD }}
+
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@v1.9
+        if: always()
+        with:
+          allure_results: target/allure-results
+          allure_report: allure-report
+          allure_history: allure-history
+          keep_reports: 20
+
+      - name: Deploy Allure Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-report
+
+      - name: Upload All Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: full-regression-reports
+          path: |
+            target/allure-results
+            reports/extent/
+            reports/cucumber/
+            reports/logs/
+          retention-days: 14
+
+      - name: Post Slack Notification on Failure
+        if: failure()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: "Regression tests FAILED on ${{ github.ref }} — check reports"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

@@ -1,0 +1,56 @@
+# =============================================================================
+#  .gitignore — Final Project Bootcamp Group 2
+# =============================================================================
+
+# Maven build output
+target/
+*.class
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+*.code-workspace
+.eclipse/
+.settings/
+.project
+.classpath
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Reports (generated — do not commit)
+reports/allure-results/
+reports/extent/
+reports/screenshots/
+reports/logs/
+reports/cucumber/
+allure-report/
+allure-history/
+
+# Allure results
+target/allure-results/
+target/allure-report/
+
+# Test logs
+*.log
+
+# Credentials & secrets
+*.env
+.env
+*.secret
+secrets.conf
+prod-credentials.conf
+
+# WebDriver binaries (managed by WebDriverManager)
+.wdm/
+
+# Playwright browser downloads
+playwright-browsers/
+
+# Temp files
+*.tmp
+*.temp

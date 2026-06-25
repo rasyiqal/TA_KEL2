@@ -1,0 +1,117 @@
+version: "3.9"
+
+# =============================================================================
+#  Docker Compose — Selenium Grid 4 with Chrome & Firefox Nodes
+#
+#  Usage:
+#    Start Grid  : docker-compose -f docker/docker-compose.yml up -d
+#    Stop Grid   : docker-compose -f docker/docker-compose.yml down
+#    View UI     : http://localhost:4444/ui (Selenium Grid Console)
+#
+#  Run tests against Grid:
+#    mvn test -Dremote=true -Dgrid.url=http://localhost:4444/wd/hub -Dheadless=true
+#    mvn test -Pstaging  (uses staging.conf which sets remote=true)
+#
+#  Scale nodes:
+#    docker-compose -f docker/docker-compose.yml up -d --scale chrome=4
+# =============================================================================
+
+services:
+
+  # ============================================================
+  #  Selenium Hub (Grid 4)
+  # ============================================================
+  selenium-hub:
+    image: selenium/hub:4.27.0
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"   # WebDriver / Grid API
+      - "4443:4443"   # HTTPS
+      - "4442:4442"   # Event bus publish
+    environment:
+      - GRID_MAX_SESSION=16
+      - GRID_BROWSER_TIMEOUT=300
+      - GRID_TIMEOUT=300
+    networks:
+      - selenium-grid
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4444/status"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+
+  # ============================================================
+  #  Chrome Node
+  # ============================================================
+  chrome:
+    image: selenium/node-chrome:4.27.0
+    container_name: selenium-chrome
+    depends_on:
+      selenium-hub:
+        condition: service_healthy
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=4
+      - SE_NODE_SESSION_TIMEOUT=300
+      - SE_VNC_NO_PASSWORD=1
+    ports:
+      - "7900:7900"   # noVNC — view browser live at http://localhost:7900
+    shm_size: "2g"
+    volumes:
+      - /dev/shm:/dev/shm
+    networks:
+      - selenium-grid
+
+  # ============================================================
+  #  Firefox Node
+  # ============================================================
+  firefox:
+    image: selenium/node-firefox:4.27.0
+    container_name: selenium-firefox
+    depends_on:
+      selenium-hub:
+        condition: service_healthy
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=2
+      - SE_NODE_SESSION_TIMEOUT=300
+    ports:
+      - "7901:7900"   # noVNC for Firefox
+    shm_size: "2g"
+    volumes:
+      - /dev/shm:/dev/shm
+    networks:
+      - selenium-grid
+
+  # ============================================================
+  #  Test Runner (optional — run tests inside Docker)
+  # ============================================================
+  test-runner:
+    image: maven:3.9.9-eclipse-temurin-21
+    container_name: test-runner
+    depends_on:
+      selenium-hub:
+        condition: service_healthy
+    working_dir: /app
+    volumes:
+      - ../:/app
+      - ~/.m2:/root/.m2    # Maven cache
+    environment:
+      - ENV=staging
+      - BROWSER=chrome
+      - HEADLESS=true
+      - REMOTE=true
+      - GRID_URL=http://selenium-hub:4444/wd/hub
+    command: mvn test -Denv=staging -Dremote=true -Dheadless=true -Dgrid.url=http://selenium-hub:4444/wd/hub
+    networks:
+      - selenium-grid
+    profiles:
+      - run-tests   # Only starts with: docker-compose --profile run-tests up
+
+networks:
+  selenium-grid:
+    driver: bridge
