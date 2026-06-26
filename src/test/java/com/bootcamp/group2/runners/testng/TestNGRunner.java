@@ -28,7 +28,8 @@ import org.testng.annotations.DataProvider;
         "pretty",
         "html:reports/cucumber/cucumber-report-testng.html",
         "json:reports/cucumber/cucumber-report-testng.json",
-        "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+        "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
+        "com.bootcamp.group2.plugin.ScreenshotPlugin"
     },
     monochrome = true,
     publish    = false

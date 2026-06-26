@@ -11,68 +11,46 @@ public class WebLoginSteps {
     private WebLoginPage     loginPage;
     private WebDashboardPage dashboardPage;
 
-    @Given("user opens web login page")
-    public void userOpensWebLoginPage() {
+    @Given("user is on the web login page")
+    public void userIsOnTheWebLoginPage() {
         loginPage = new WebLoginPage();
         loginPage.open();
     }
 
-    @When("user enters email {string} and password {string}")
-    public void userEntersEmailAndPassword(String email, String password) {
-        loginPage.enterEmail(email).enterPassword(password);
-    }
-
-    @When("user enters valid credentials")
-    public void userEntersValidCredentials() {
-        loginPage
+    @When("user logs in with valid credentials")
+    public void userLogsInWithValidCredentials() {
+        dashboardPage = loginPage
             .enterEmail(ConfigManager.getValidEmail())
-            .enterPassword(ConfigManager.getValidPassword());
+            .enterPassword(ConfigManager.getValidPassword())
+            .clickLogin();
     }
 
-    @When("user clicks Login button")
-    public void userClicksLoginButton() {
-        dashboardPage = loginPage.clickLogin();
+    @When("user attempts web login with email {string} and password {string}")
+    public void userAttemptsWebLoginWithEmailAndPassword(String email, String password) {
+        loginPage.enterEmail(email).enterPassword(password).clickLoginExpectFail();
     }
 
-    @When("user clicks Login button expecting failure")
-    public void userClicksLoginButtonExpectingFailure() {
-        loginPage.clickLoginExpectFail();
-    }
-
-    @When("user logs in using valid credentials")
-    public void userLogsInUsingValidCredentials() {
-        loginPage = new WebLoginPage();
-        dashboardPage = loginPage.loginAs(
-            ConfigManager.getValidEmail(),
-            ConfigManager.getValidPassword()
-        );
-    }
-
-    @Then("user successfully navigates to web dashboard")
-    public void userSuccessfullyNavigatesToWebDashboard() {
+    @Then("user is redirected to the web dashboard")
+    public void userIsRedirectedToTheWebDashboard() {
         Assertions.assertThat(dashboardPage.isDashboardLoaded())
-            .as("After login, URL should not contain 'authentication/login'")
+            .as("User should be redirected to web dashboard after successful login")
             .isTrue();
-    }
-
-    @Then("URL does not contain login page")
-    public void urlDoesNotContainLoginPage() {
         Assertions.assertThat(dashboardPage.getCurrentUrl())
-            .as("URL after successful login")
+            .as("URL should not contain login path after successful login")
             .doesNotContain("authentication/login");
     }
 
-    @Then("error message is displayed")
-    public void errorMessageIsDisplayed() {
+    @Then("login fails and an error message is displayed")
+    public void loginFailsAndAnErrorMessageIsDisplayed() {
         Assertions.assertThat(loginPage.isErrorDisplayed())
-            .as("Error message should be displayed upon failed login")
+            .as("An error message should be displayed after failed login")
             .isTrue();
     }
 
-    @Then("user remains on web login page")
-    public void userRemainsOnWebLoginPage() {
+    @Then("user remains on the web login page")
+    public void userRemainsOnTheWebLoginPage() {
         Assertions.assertThat(loginPage.isOnLoginPage())
-            .as("User should remain on login page")
+            .as("User should remain on the web login page")
             .isTrue();
     }
 

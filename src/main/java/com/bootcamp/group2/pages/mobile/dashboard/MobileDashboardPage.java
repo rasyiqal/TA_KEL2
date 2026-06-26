@@ -1,15 +1,24 @@
 package com.bootcamp.group2.pages.mobile.dashboard;
 
 import com.bootcamp.group2.pages.BasePage;
-import com.bootcamp.group2.pages.mobile.login.MobileLoginPage;
+import com.bootcamp.group2.pages.mobile.koreksiabsen.MobileKoreksiAbsenPage;
 import com.bootcamp.group2.utils.WaitUtils;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MobileDashboardPage extends BasePage {
 
-    @Step("Check if mobile dashboard page is loaded")
+    private final By greetingText     = By.xpath("//p[starts-with(normalize-space(), 'Hai,')]");
+    private final By koreksiAbsenMenu = By.xpath("//a[contains(@class,'user__menu__item') and normalize-space()='Koreksi Absen']");
+
+    @Step("Check if mobile home page is loaded")
+    public boolean isHomePageLoaded() {
+        return isDisplayed(greetingText) && getCurrentUrl().contains("apps/absent");
+    }
+
+    @Step("Check if mobile dashboard is loaded")
     public boolean isDashboardLoaded() {
         try {
             WaitUtils.waitFor(driver,
@@ -19,6 +28,12 @@ public class MobileDashboardPage extends BasePage {
             log.warn("Dashboard not loaded — URL still contains 'absen/login': {}", getCurrentUrl());
             return false;
         }
+    }
+
+    @Step("Click 'Koreksi Absen' from home menu")
+    public MobileKoreksiAbsenPage clickKoreksiAbsen() {
+        click(koreksiAbsenMenu);
+        return new MobileKoreksiAbsenPage();
     }
 
     public String getCurrentUrl() {

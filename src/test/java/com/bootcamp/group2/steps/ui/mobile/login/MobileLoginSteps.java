@@ -11,87 +11,53 @@ public class MobileLoginSteps {
     private MobileLoginPage     loginPage;
     private MobileDashboardPage dashboardPage;
 
-    @Given("user opens mobile login page")
-    public void userOpensMobileLoginPage() {
+    @Given("user is on the mobile login page")
+    public void userIsOnTheMobileLoginPage() {
         loginPage = new MobileLoginPage();
         loginPage.open();
     }
 
-    @When("user enters mobile email {string} and password {string}")
-    public void userEntersMobileEmailAndPassword(String email, String password) {
-        loginPage.enterEmail(email).enterPassword(password);
-    }
-
-    @When("user enters valid mobile user credentials")
-    public void userEntersValidMobileUserCredentials() {
-        loginPage
+    @When("user logs in with valid mobile credentials")
+    public void userLogsInWithValidMobileCredentials() {
+        dashboardPage = loginPage
             .enterEmail(ConfigManager.getValidEmail())
-            .enterPassword(ConfigManager.getValidPassword());
+            .enterPassword(ConfigManager.getValidPassword())
+            .clickLogin();
     }
 
-    @When("user enters valid mobile admin credentials")
-    public void userEntersValidMobileAdminCredentials() {
-        loginPage
-            .enterEmail(ConfigManager.getAdminEmail())
-            .enterPassword(ConfigManager.getAdminPassword());
+    @When("user attempts mobile login with email {string} and password {string}")
+    public void userAttemptsMobileLoginWithEmailAndPassword(String email, String password) {
+        loginPage.enterEmail(email).enterPassword(password).clickLoginExpectFail();
     }
 
-    @When("user clicks Mobile Login button")
-    public void userClicksMobileLoginButton() {
-        dashboardPage = loginPage.clickLogin();
-    }
-
-    @When("user clicks Mobile Login button expecting failure")
-    public void userClicksMobileLoginButtonExpectingFailure() {
-        loginPage.clickLoginExpectFail();
-    }
-
-    @When("user logs in using valid mobile credentials")
-    public void userLogsInUsingValidMobileCredentials() {
-        loginPage = new MobileLoginPage();
-        dashboardPage = loginPage.loginAs(
-            ConfigManager.getValidEmail(),
-            ConfigManager.getValidPassword()
-        );
-    }
-
-    @When("user clicks Forgot Password button")
-    public void userClicksForgotPasswordButton() {
-        loginPage.clickForgotPassword();
-    }
-
-    @Then("user successfully navigates to mobile dashboard")
-    public void userSuccessfullyNavigatesToMobileDashboard() {
+    @Then("user is redirected to the mobile home page")
+    public void userIsRedirectedToTheMobileHomePage() {
         Assertions.assertThat(dashboardPage.isDashboardLoaded())
-            .as("After login, URL should not contain 'absen/login'")
+            .as("User should be redirected to mobile home page after successful login")
             .isTrue();
-    }
-
-    @Then("URL does not contain mobile login page")
-    public void urlDoesNotContainMobileLoginPage() {
         Assertions.assertThat(dashboardPage.getCurrentUrl())
-            .as("URL after successful mobile login")
+            .as("URL should not contain mobile login path after successful login")
             .doesNotContain("absen/login");
     }
 
-    @Then("mobile error message is displayed")
-    public void mobileErrorMessageIsDisplayed() {
-        Assertions.assertThat(loginPage.isErrorDisplayed())
-            .as("Error message should be displayed upon failed mobile login")
-            .isTrue();
-    }
-
-    @Then("user remains on mobile login page")
-    public void userRemainsOnMobileLoginPage() {
-        Assertions.assertThat(loginPage.isOnLoginPage())
-            .as("User should remain on mobile login page")
-            .isTrue();
-    }
-
-    @Then("Forgot Password button is visible on mobile login page")
-    public void forgotPasswordButtonIsVisible() {
+    @Then("the Forgot Password button is visible")
+    public void theForgotPasswordButtonIsVisible() {
         Assertions.assertThat(loginPage.isForgotPasswordVisible())
             .as("'Lupa password ?' button should be visible on mobile login page")
+            .isTrue();
+    }
+
+    @Then("mobile login fails and an error message is displayed")
+    public void mobileLoginFailsAndAnErrorMessageIsDisplayed() {
+        Assertions.assertThat(loginPage.isErrorDisplayed())
+            .as("An error message should be displayed after failed mobile login")
+            .isTrue();
+    }
+
+    @Then("user remains on the mobile login page")
+    public void userRemainsOnTheMobileLoginPage() {
+        Assertions.assertThat(loginPage.isOnLoginPage())
+            .as("User should remain on the mobile login page")
             .isTrue();
     }
 

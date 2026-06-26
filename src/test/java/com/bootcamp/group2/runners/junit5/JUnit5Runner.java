@@ -29,7 +29,8 @@ import org.junit.platform.suite.api.*;
     value = "pretty," +
             "html:reports/cucumber/cucumber-report.html," +
             "json:reports/cucumber/cucumber-report.json," +
-            "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+            "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm," +
+            "com.bootcamp.group2.plugin.ScreenshotPlugin"
 )
 @ConfigurationParameter(
     key   = "cucumber.publish.quiet",

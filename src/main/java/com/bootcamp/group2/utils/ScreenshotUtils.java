@@ -128,10 +128,6 @@ public class ScreenshotUtils {
         }
     }
 
-    // =========================================================================
-    //  Private Helpers
-    // =========================================================================
-
     private static void attachToAllure(byte[] screenshotBytes, String name) {
         try {
             Allure.addAttachment(

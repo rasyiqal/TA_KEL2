@@ -88,9 +88,11 @@ final-project-bootcamp-group-2/
 │   │   │   │       └── WebDashboardPage.java   # Halaman dashboard web
 │   │   │   └── mobile/
 │   │   │       ├── login/
-│   │   │       │   └── MobileLoginPage.java    # Halaman login mobile
-│   │   │       └── dashboard/
-│   │   │           └── MobileDashboardPage.java# Halaman utama mobile
+│   │   │       │   └── MobileLoginPage.java       # Halaman login mobile
+│   │   │       ├── dashboard/
+│   │   │       │   └── MobileDashboardPage.java   # Halaman utama mobile
+│   │   │       └── koreksiabsen/
+│   │   │           └── MobileKoreksiAbsenPage.java# Halaman koreksi absen mobile
 │   │   └── utils/
 │   │       ├── ConfigManager.java              # Manajemen konfigurasi (env-aware)
 │   │       ├── DriverFactory.java              # ThreadLocal WebDriver factory
@@ -113,8 +115,10 @@ final-project-bootcamp-group-2/
 │       │       │   │   └── login/
 │       │       │   │       └── WebLoginSteps.java     # Step definitions login web
 │       │       │   └── mobile/
-│       │       │       └── login/
-│       │       │           └── MobileLoginSteps.java  # Step definitions login mobile
+│       │       │       ├── login/
+│       │       │       │   └── MobileLoginSteps.java         # Step definitions login mobile
+│       │       │       └── koreksiabsen/
+│       │       │           └── MobileKoreksiAbsenSteps.java  # Step definitions koreksi absen mobile
 │       │       └── api/                        # (Siap digunakan untuk API testing)
 │       │
 │       └── resources/
@@ -129,8 +133,12 @@ final-project-bootcamp-group-2/
 │           │   │   │   └── login/
 │           │   │   │       └── login.feature   # Skenario login web
 │           │   │   └── mobile/
-│           │   │       └── login/
-│           │   │           └── login.feature   # Skenario login mobile
+│           │   │       ├── login/
+│           │   │       │   ├── login.feature            # Skenario login mobile (positif)
+│           │   │       │   └── login_negative.feature   # Skenario login mobile (negatif)
+│           │   │       └── koreksiabsen/
+│           │   │           ├── koreksi_absen.feature          # Skenario koreksi absen (positif)
+│           │   │           └── koreksi_absen_negative.feature # Skenario koreksi absen (negatif)
 │           │   └── api/                        # (Siap untuk skenario API)
 │           ├── allure.properties
 │           ├── junit-platform.properties       # Konfigurasi parallel JUnit5
@@ -190,7 +198,9 @@ mvn test -Dcucumber.filter.tags="@login"
 
 # Filter bebas
 mvn test -Dcucumber.filter.tags="@smoke and @web"
-```
+
+# Menjalankan scenario negatif saja
+mvn test -Dcucumber.filter.tags="@loginNegative or @koreksiAbsenNegatif"
 
 ### Pilih Platform
 
@@ -500,7 +510,8 @@ mvn test -Dcucumber.filter.tags="@nama-fitur"
 - Gunakan **AssertJ** untuk assertion, bukan raw JUnit assert
 - Gunakan `@Step` Allure di method Page Object
 - Gunakan `ConfigManager` untuk semua nilai konfigurasi — jangan hardcode URL
-- Tag setiap skenario dengan tepat (`@smoke`, `@regression`, `@web`, `@mobile`)
+- Tag setiap skenario dengan tepat (`@smoke`, `@regression`, `@web`, `@mobile`, `@loginNegative`)
+- Pisahkan feature file antara skenario positif (contoh: `login.feature`) dan negatif (`login_negative.feature`)
 - Gunakan `DataFaker` untuk data test dinamis
 
 ### Tidak Boleh

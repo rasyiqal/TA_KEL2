@@ -26,10 +26,6 @@ public class WaitUtils {
         // Utility class
     }
 
-    // =========================================================================
-    //  Visibility Waits
-    // =========================================================================
-
     public static WebElement waitForVisible(WebDriver driver, By locator) {
         return getWait(driver, DEFAULT_TIMEOUT)
             .until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -45,10 +41,6 @@ public class WaitUtils {
             .until(ExpectedConditions.visibilityOf(element));
     }
 
-    // =========================================================================
-    //  Clickable Waits
-    // =========================================================================
-
     public static WebElement waitForClickable(WebDriver driver, By locator) {
         return getWait(driver, DEFAULT_TIMEOUT)
             .until(ExpectedConditions.elementToBeClickable(locator));
@@ -59,18 +51,10 @@ public class WaitUtils {
             .until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    // =========================================================================
-    //  Presence Waits
-    // =========================================================================
-
     public static WebElement waitForPresence(WebDriver driver, By locator) {
         return getWait(driver, DEFAULT_TIMEOUT)
             .until(ExpectedConditions.presenceOfElementLocated(locator));
     }
-
-    // =========================================================================
-    //  URL & Title Waits
-    // =========================================================================
 
     public static void waitForUrlContains(WebDriver driver, String urlFragment) {
         getWait(driver, DEFAULT_TIMEOUT)
@@ -82,10 +66,6 @@ public class WaitUtils {
             .until(ExpectedConditions.titleContains(title));
     }
 
-    // =========================================================================
-    //  Disappearance Waits
-    // =========================================================================
-
     public static void waitForInvisible(WebDriver driver, By locator) {
         getWait(driver, DEFAULT_TIMEOUT)
             .until(ExpectedConditions.invisibilityOfElementLocated(locator));
@@ -96,18 +76,10 @@ public class WaitUtils {
             .until(ExpectedConditions.stalenessOf(element));
     }
 
-    // =========================================================================
-    //  Text Waits
-    // =========================================================================
-
     public static void waitForTextPresent(WebDriver driver, By locator, String text) {
         getWait(driver, DEFAULT_TIMEOUT)
             .until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
     }
-
-    // =========================================================================
-    //  Custom Condition Wait
-    // =========================================================================
 
     public static <T> T waitFor(WebDriver driver, ExpectedCondition<T> condition) {
         return getWait(driver, DEFAULT_TIMEOUT).until(condition);
@@ -116,10 +88,6 @@ public class WaitUtils {
     public static <T> T waitFor(WebDriver driver, ExpectedCondition<T> condition, int timeoutSeconds) {
         return getWait(driver, timeoutSeconds).until(condition);
     }
-
-    // =========================================================================
-    //  Soft Wait (check without throwing)
-    // =========================================================================
 
     /**
      * Checks if an element is present without throwing an exception.
@@ -134,10 +102,6 @@ public class WaitUtils {
             return false;
         }
     }
-
-    // =========================================================================
-    //  Private Helpers
-    // =========================================================================
 
     private static WebDriverWait getWait(WebDriver driver, int timeoutSeconds) {
         return new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
