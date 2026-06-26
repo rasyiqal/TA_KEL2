@@ -84,13 +84,27 @@ public class MobileKoreksiAbsenPage extends BasePage {
     }
 
     public boolean isJamMasukEmpty() {
-        String val = getAttribute(jamMasukInput, "value");
-        return val == null || val.isBlank();
+        try {
+            WaitUtils.waitFor(driver, d -> {
+                String val = getAttribute(jamMasukInput, "value");
+                return val == null || val.isBlank();
+            });
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public boolean isJamKeluarEmpty() {
-        String val = getAttribute(jamKeluarInput, "value");
-        return val == null || val.isBlank();
+        try {
+            WaitUtils.waitFor(driver, d -> {
+                String val = getAttribute(jamKeluarInput, "value");
+                return val == null || val.isBlank();
+            });
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     @Step("Enter Jam Masuk: {datetime}")
@@ -111,20 +125,35 @@ public class MobileKoreksiAbsenPage extends BasePage {
 
     @Step("Click 'Ajukan' submit button")
     public MobileKoreksiAbsenPage clickAjukan() {
-        click(ajukanSubmitBtn);
+        try {
+            click(ajukanSubmitBtn);
+        } catch (org.openqa.selenium.ElementClickInterceptedException e) {
+            log.warn("Ajukan button intercepted, using jsClick");
+            jsClick(WaitUtils.waitForPresence(driver, ajukanSubmitBtn));
+        }
         return this;
     }
 
     @Step("Click 'Ajukan' expecting validation error")
     public MobileKoreksiAbsenPage clickAjukanExpectFail() {
-        click(ajukanSubmitBtn);
+        try {
+            click(ajukanSubmitBtn);
+        } catch (org.openqa.selenium.ElementClickInterceptedException e) {
+            log.warn("Ajukan button intercepted, using jsClick");
+            jsClick(WaitUtils.waitForPresence(driver, ajukanSubmitBtn));
+        }
         WaitUtils.waitForVisible(driver, errorValidation, 5);
         return this;
     }
 
     @Step("Click 'Reset' button")
     public MobileKoreksiAbsenPage clickReset() {
-        click(resetBtn);
+        try {
+            click(resetBtn);
+        } catch (org.openqa.selenium.ElementClickInterceptedException e) {
+            log.warn("Reset button intercepted, using jsClick");
+            jsClick(WaitUtils.waitForPresence(driver, resetBtn));
+        }
         return this;
     }
 

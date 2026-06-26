@@ -23,6 +23,7 @@ public class MobileDashboardPage extends BasePage {
         try {
             WaitUtils.waitFor(driver,
                 ExpectedConditions.not(ExpectedConditions.urlContains("absen/login")));
+            WaitUtils.waitForVisible(driver, greetingText);
             return true;
         } catch (TimeoutException e) {
             log.warn("Dashboard not loaded — URL still contains 'absen/login': {}", getCurrentUrl());
@@ -32,7 +33,20 @@ public class MobileDashboardPage extends BasePage {
 
     @Step("Click 'Koreksi Absen' from home menu")
     public MobileKoreksiAbsenPage clickKoreksiAbsen() {
-        click(koreksiAbsenMenu);
+        try {
+            org.openqa.selenium.WebElement menu = WaitUtils.waitForPresence(driver, koreksiAbsenMenu);
+            try {
+                WaitUtils.waitForClickable(driver, koreksiAbsenMenu);
+                menu.click();
+            } catch (Exception e) {
+                log.warn("Normal click failed or element intercepted, fallback to jsClick: {}", e.getMessage());
+                org.openqa.selenium.WebElement freshMenu = WaitUtils.waitForPresence(driver, koreksiAbsenMenu);
+                jsClick(freshMenu);
+            }
+        } catch (Exception e) {
+            log.error("Koreksi Absen menu not found in DOM", e);
+            throw e;
+        }
         return new MobileKoreksiAbsenPage();
     }
 
