@@ -1,0 +1,464 @@
+2026-06-26 13:48:51.096 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 13:48:51.144 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=WEB
+2026-06-26 13:48:51.598 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with incorrect password
+2026-06-26 13:48:51.598 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login successful with valid credentials
+2026-06-26 13:48:51.598 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with various invalid credentials combinations
+2026-06-26 13:48:51.598 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with various invalid credentials combinations
+2026-06-26 13:48:51.599 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:48:51.599 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:48:51.599 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:48:51.599 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:01.874 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:49:01.916 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:49:02.238 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:49:02.238 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:49:02.446 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:49:02.454 [ForkJoinPool-2-worker-2] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:49:04.009 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:49:04.011 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:49:09.992 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:49:10.022 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:49:11.185 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with incorrect password — Status: PASSED
+2026-06-26 13:49:11.339 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with unregistered email
+2026-06-26 13:49:11.339 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:11.562 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login successful with valid credentials — Status: PASSED
+2026-06-26 13:49:11.610 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with empty email
+2026-06-26 13:49:11.611 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:13.344 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:49:13.349 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:49:13.512 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:49:13.523 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:49:14.894 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:49:15.077 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:49:15.093 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with various invalid credentials combinations
+2026-06-26 13:49:15.093 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:15.988 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:49:16.002 [ForkJoinPool-2-worker-2] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:49:16.182 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:49:17.160 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:49:17.174 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with various invalid credentials combinations
+2026-06-26 13:49:17.174 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:17.344 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:49:17.876 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with empty email — Status: PASSED
+2026-06-26 13:49:17.893 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with empty password
+2026-06-26 13:49:17.894 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:18.012 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:49:18.138 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:49:18.144 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:49:18.663 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:49:18.677 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with various invalid credentials combinations
+2026-06-26 13:49:18.677 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:18.940 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:49:18.944 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:49:18.961 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:49:19.466 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with unregistered email — Status: PASSED
+2026-06-26 13:49:19.477 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with various invalid credentials combinations
+2026-06-26 13:49:19.477 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:19.714 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:49:19.719 [ForkJoinPool-2-worker-2] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:49:20.477 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:49:20.485 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:49:21.813 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:49:22.005 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:49:22.244 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:49:22.259 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login successful with valid credentials
+2026-06-26 13:49:22.260 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:22.345 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with empty password — Status: PASSED
+2026-06-26 13:49:22.360 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Forgot Password button is visible on mobile login page
+2026-06-26 13:49:22.360 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:23.141 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:49:23.203 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:49:23.311 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:49:23.321 [ForkJoinPool-2-worker-1] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:49:23.498 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:49:23.501 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:49:23.681 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:49:23.692 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with incorrect password
+2026-06-26 13:49:23.692 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:23.714 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:49:23.727 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with empty password
+2026-06-26 13:49:23.728 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:24.856 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:49:24.867 [ForkJoinPool-2-worker-4] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:49:24.871 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:49:24.924 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:49:24.938 [ForkJoinPool-2-worker-2] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:49:25.212 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Forgot Password button is visible on mobile login page — Status: PASSED
+2026-06-26 13:49:25.221 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with unregistered email
+2026-06-26 13:49:25.221 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:25.934 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:49:25.941 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:49:27.555 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:49:27.758 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with empty password — Status: PASSED
+2026-06-26 13:49:27.768 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with empty email
+2026-06-26 13:49:27.770 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-26 13:49:28.586 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:49:28.654 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:49:28.764 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:49:28.773 [ForkJoinPool-2-worker-2] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:49:29.081 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login successful with valid credentials — Status: PASSED
+2026-06-26 13:49:29.128 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with incorrect password — Status: PASSED
+2026-06-26 13:49:30.103 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:49:30.262 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with unregistered email — Status: PASSED
+2026-06-26 13:49:31.497 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:49:31.694 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with empty email — Status: PASSED
+2026-06-26 13:49:31.983 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-26 13:51:07.153 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 13:51:07.191 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=MOBILE
+2026-06-26 13:51:07.638 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-26 13:51:21.555 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 13:51:21.594 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=MOBILE
+2026-06-26 13:51:21.962 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with various invalid credentials combinations
+2026-06-26 13:51:21.962 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with incorrect password
+2026-06-26 13:51:21.963 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login successful with valid credentials
+2026-06-26 13:51:21.963 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Forgot Password button is visible on mobile login page
+2026-06-26 13:51:21.966 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:51:21.966 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:51:21.966 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:51:21.966 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:51:24.307 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:51:24.376 [ForkJoinPool-2-worker-4] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:51:24.418 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:51:24.418 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:51:24.418 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:51:24.423 [ForkJoinPool-2-worker-2] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:51:24.423 [ForkJoinPool-2-worker-1] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:51:24.423 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:51:25.162 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:51:25.391 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Forgot Password button is visible on mobile login page — Status: PASSED
+2026-06-26 13:51:25.430 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with unregistered email
+2026-06-26 13:51:25.430 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:51:26.606 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:51:26.609 [ForkJoinPool-2-worker-4] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:51:26.774 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:51:26.909 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with incorrect password — Status: PASSED
+2026-06-26 13:51:26.920 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with empty email
+2026-06-26 13:51:26.920 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:51:27.943 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:51:27.984 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:51:27.987 [ForkJoinPool-2-worker-1] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:51:28.078 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login successful with valid credentials — Status: PASSED
+2026-06-26 13:51:28.089 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with empty password
+2026-06-26 13:51:28.089 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:51:29.200 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:51:29.203 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:51:30.044 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:51:30.255 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with unregistered email — Status: PASSED
+2026-06-26 13:51:30.260 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with various invalid credentials combinations
+2026-06-26 13:51:30.260 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:51:30.617 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:51:30.863 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with empty email — Status: PASSED
+2026-06-26 13:51:30.873 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with various invalid credentials combinations
+2026-06-26 13:51:30.874 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:51:31.320 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:51:31.324 [ForkJoinPool-2-worker-4] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:51:31.900 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:51:31.903 [ForkJoinPool-2-worker-1] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:51:33.757 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:51:33.905 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:51:34.111 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:51:34.249 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with empty password — Status: PASSED
+2026-06-26 13:51:34.953 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:51:35.090 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:51:50.842 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:51:51.054 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:51:51.283 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-26 13:54:24.146 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 13:54:24.187 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=MOBILE
+2026-06-26 13:54:24.514 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Berhasil mengakses halaman Ajukan Sakit
+2026-06-26 13:54:24.515 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:54:25.977 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:54:26.028 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:54:30.311 [ForkJoinPool-2-worker-3] WARN  com.bootcamp.group2.hooks.Hooks - Scenario FAILED: Berhasil mengakses halaman Ajukan Sakit — taking screenshot
+2026-06-26 13:54:30.419 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:54:30.567 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Berhasil mengakses halaman Ajukan Sakit — Status: FAILED
+2026-06-26 13:54:30.801 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-26 13:55:49.515 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 13:55:49.558 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=MOBILE
+2026-06-26 13:55:49.927 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Berhasil mengakses halaman Ajukan Sakit
+2026-06-26 13:55:49.929 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:55:51.842 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:55:51.912 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:55:56.910 [ForkJoinPool-2-worker-3] WARN  com.bootcamp.group2.hooks.Hooks - Scenario FAILED: Berhasil mengakses halaman Ajukan Sakit — taking screenshot
+2026-06-26 13:55:56.957 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:55:57.067 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Berhasil mengakses halaman Ajukan Sakit — Status: FAILED
+2026-06-26 13:55:57.342 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-26 13:56:30.583 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 13:56:30.621 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=MOBILE
+2026-06-26 13:56:30.996 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Berhasil mengakses halaman Ajukan Sakit
+2026-06-26 13:56:30.998 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:56:32.548 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:56:32.592 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:56:39.716 [ForkJoinPool-2-worker-3] WARN  c.b.g.pages.mobile.m_sakit.MobileMenuSakitPage - Element click intercepted for locator By.xpath: //img[@alt='Sakit'], retrying click (attempt 1/3)
+2026-06-26 13:56:41.329 [ForkJoinPool-2-worker-3] WARN  c.b.g.pages.mobile.m_sakit.MobileMenuSakitPage - Element click intercepted for locator By.xpath: //img[@alt='Sakit'], retrying click (attempt 2/3)
+2026-06-26 13:56:42.910 [ForkJoinPool-2-worker-3] WARN  c.b.g.pages.mobile.m_sakit.MobileMenuSakitPage - Element click intercepted for locator By.xpath: //img[@alt='Sakit'], retrying click (attempt 3/3)
+2026-06-26 13:56:44.478 [ForkJoinPool-2-worker-3] WARN  com.bootcamp.group2.hooks.Hooks - Scenario FAILED: Berhasil mengakses halaman Ajukan Sakit — taking screenshot
+2026-06-26 13:56:44.557 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:56:44.814 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Berhasil mengakses halaman Ajukan Sakit — Status: FAILED
+2026-06-26 13:56:45.108 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-26 13:57:30.791 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 13:57:30.829 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=MOBILE
+2026-06-26 13:57:31.225 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Berhasil mengakses halaman Ajukan Sakit
+2026-06-26 13:57:31.227 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:57:32.730 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:57:32.774 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:57:39.278 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:57:39.409 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Berhasil mengakses halaman Ajukan Sakit — Status: PASSED
+2026-06-26 13:57:39.643 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-26 13:58:18.884 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 13:58:18.936 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=MOBILE
+2026-06-26 13:58:19.234 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Berhasil mengakses halaman Ajukan Sakit
+2026-06-26 13:58:19.234 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:58:20.866 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:58:20.907 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:58:38.534 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:58:38.720 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Berhasil mengakses halaman Ajukan Sakit — Status: PASSED
+2026-06-26 13:58:38.964 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-26 13:59:00.497 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 13:59:00.535 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=MOBILE
+2026-06-26 13:59:00.852 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login successful with valid credentials
+2026-06-26 13:59:00.854 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:00.855 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login successful with valid credentials
+2026-06-26 13:59:00.855 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with various invalid credentials combinations
+2026-06-26 13:59:00.855 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:00.855 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with various invalid credentials combinations
+2026-06-26 13:59:00.855 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:00.855 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:03.251 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:59:03.283 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:59:03.283 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:59:03.325 [ForkJoinPool-2-worker-2] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:59:03.325 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:59:03.325 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:59:03.357 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:59:03.365 [ForkJoinPool-2-worker-4] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:59:07.621 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:59:07.953 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login successful with valid credentials — Status: PASSED
+2026-06-26 13:59:07.988 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Forgot Password button is visible on mobile login page
+2026-06-26 13:59:07.988 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:08.832 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:59:09.038 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login successful with valid credentials — Status: PASSED
+2026-06-26 13:59:09.048 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with incorrect password
+2026-06-26 13:59:09.048 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:09.274 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:59:09.281 [ForkJoinPool-2-worker-4] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:59:09.957 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:59:10.069 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Forgot Password button is visible on mobile login page — Status: PASSED
+2026-06-26 13:59:10.076 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with incorrect password
+2026-06-26 13:59:10.076 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:10.166 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:59:10.171 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:59:11.206 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:59:11.213 [ForkJoinPool-2-worker-4] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:59:12.954 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:59:13.104 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with incorrect password — Status: PASSED
+2026-06-26 13:59:13.117 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with unregistered email
+2026-06-26 13:59:13.117 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:13.817 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:59:14.166 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with incorrect password — Status: PASSED
+2026-06-26 13:59:14.176 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with unregistered email
+2026-06-26 13:59:14.178 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:14.334 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:59:14.337 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:59:15.222 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:59:15.287 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:59:15.538 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:59:15.538 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:59:15.549 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with various invalid credentials combinations
+2026-06-26 13:59:15.549 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with various invalid credentials combinations
+2026-06-26 13:59:15.549 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:15.549 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:15.618 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:59:15.620 [ForkJoinPool-2-worker-4] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:59:16.929 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:59:16.931 [ForkJoinPool-2-worker-2] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:59:16.964 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:59:16.968 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:59:17.797 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:59:17.911 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with unregistered email — Status: PASSED
+2026-06-26 13:59:17.917 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with empty email
+2026-06-26 13:59:17.917 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:18.962 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:59:18.965 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:59:19.965 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:59:19.993 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:59:20.129 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with unregistered email — Status: PASSED
+2026-06-26 13:59:20.136 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with empty email
+2026-06-26 13:59:20.136 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:20.145 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:59:20.151 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with various invalid credentials combinations
+2026-06-26 13:59:20.152 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:20.821 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:59:21.081 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with empty email — Status: PASSED
+2026-06-26 13:59:21.092 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with empty password
+2026-06-26 13:59:21.093 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:21.367 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:59:21.472 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:59:21.646 [ForkJoinPool-2-worker-4] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:59:21.646 [ForkJoinPool-2-worker-2] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:59:22.434 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:59:22.437 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:59:23.252 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:59:23.433 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:59:23.442 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with various invalid credentials combinations
+2026-06-26 13:59:23.443 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:24.609 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:59:24.611 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 13:59:24.932 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:59:25.032 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 13:59:25.121 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:59:25.133 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with empty password
+2026-06-26 13:59:25.133 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 13:59:25.230 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with empty email — Status: PASSED
+2026-06-26 13:59:26.003 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 13:59:26.117 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with empty password — Status: PASSED
+2026-06-26 13:59:26.227 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:59:26.228 [ForkJoinPool-2-worker-2] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 13:59:28.074 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-1
+2026-06-26 13:59:28.195 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 13:59:32.242 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-2
+2026-06-26 13:59:32.538 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with empty password — Status: PASSED
+2026-06-26 13:59:32.829 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-26 14:18:00.202 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 14:18:00.247 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=MOBILE
+2026-06-26 14:18:00.673 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Berhasil mengakses halaman Ajukan Sakit
+2026-06-26 14:18:00.676 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:02.856 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 14:18:02.926 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 14:18:07.079 [ForkJoinPool-2-worker-3] WARN  com.bootcamp.group2.hooks.Hooks - Scenario FAILED: Berhasil mengakses halaman Ajukan Sakit — taking screenshot
+2026-06-26 14:18:07.165 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 14:18:07.340 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Berhasil mengakses halaman Ajukan Sakit — Status: FAILED
+2026-06-26 14:18:07.725 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-26 14:18:16.743 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 14:18:16.781 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=MOBILE
+2026-06-26 14:18:17.192 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with various invalid credentials combinations
+2026-06-26 14:18:17.192 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with incorrect password
+2026-06-26 14:18:17.192 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login successful with valid credentials
+2026-06-26 14:18:17.193 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with various invalid credentials combinations
+2026-06-26 14:18:17.194 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:17.194 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:17.194 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:17.194 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:19.835 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 14:18:19.835 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-2
+2026-06-26 14:18:19.863 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-1
+2026-06-26 14:18:19.863 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 14:18:19.944 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 14:18:19.944 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 14:18:19.944 [ForkJoinPool-2-worker-2] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 14:18:19.944 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 14:18:21.899 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 14:18:22.135 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with incorrect password — Status: PASSED
+2026-06-26 14:18:22.169 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with unregistered email
+2026-06-26 14:18:22.169 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:22.512 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 14:18:22.818 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login successful with valid credentials — Status: PASSED
+2026-06-26 14:18:22.829 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with empty email
+2026-06-26 14:18:22.830 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:23.895 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 14:18:23.900 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 14:18:24.390 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 14:18:24.395 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 14:18:25.761 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 14:18:26.072 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with unregistered email — Status: PASSED
+2026-06-26 14:18:26.077 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with empty password
+2026-06-26 14:18:26.077 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:27.225 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 14:18:27.228 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 14:18:27.839 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 14:18:27.977 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with empty email — Status: PASSED
+2026-06-26 14:18:27.990 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with various invalid credentials combinations
+2026-06-26 14:18:27.991 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:29.160 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 14:18:29.165 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 14:18:30.373 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 14:18:30.892 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with empty password — Status: PASSED
+2026-06-26 14:18:30.918 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Login fails with various invalid credentials combinations
+2026-06-26 14:18:30.919 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:32.349 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-1
+2026-06-26 14:18:32.362 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 14:18:32.370 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.pages.web.login.WebLoginPage - Opening URL: https://magang.dikahadir.com/authentication/login
+2026-06-26 14:18:32.484 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 14:18:32.658 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 14:18:32.668 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login successful with valid credentials
+2026-06-26 14:18:32.668 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:32.689 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 14:18:32.699 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Forgot Password button is visible on mobile login page
+2026-06-26 14:18:32.700 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:32.889 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-2
+2026-06-26 14:18:33.868 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 14:18:33.877 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with various invalid credentials combinations
+2026-06-26 14:18:33.877 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:34.187 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 14:18:34.190 [ForkJoinPool-2-worker-4] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 14:18:34.216 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-1
+2026-06-26 14:18:34.220 [ForkJoinPool-2-worker-1] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 14:18:34.983 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-2
+2026-06-26 14:18:34.988 [ForkJoinPool-2-worker-2] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 14:18:35.528 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 14:18:35.731 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Forgot Password button is visible on mobile login page — Status: PASSED
+2026-06-26 14:18:35.743 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with incorrect password
+2026-06-26 14:18:35.743 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:37.089 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-2
+2026-06-26 14:18:37.134 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 14:18:37.138 [ForkJoinPool-2-worker-4] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 14:18:37.256 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 14:18:37.261 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with various invalid credentials combinations
+2026-06-26 14:18:37.261 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:38.007 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-1
+2026-06-26 14:18:38.303 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login successful with valid credentials — Status: PASSED
+2026-06-26 14:18:38.311 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with unregistered email
+2026-06-26 14:18:38.312 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:38.430 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-2
+2026-06-26 14:18:38.435 [ForkJoinPool-2-worker-2] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 14:18:38.472 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 14:18:38.720 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 14:18:38.729 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with empty email
+2026-06-26 14:18:38.730 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:39.464 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-1
+2026-06-26 14:18:39.468 [ForkJoinPool-2-worker-1] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 14:18:40.067 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 14:18:40.070 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 14:18:40.642 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 14:18:40.789 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with incorrect password — Status: PASSED
+2026-06-26 14:18:40.797 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Mobile login fails with empty password
+2026-06-26 14:18:40.799 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 14:18:41.913 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-4
+2026-06-26 14:18:41.916 [ForkJoinPool-2-worker-4] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 14:18:42.611 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-1
+2026-06-26 14:18:42.742 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-2
+2026-06-26 14:18:42.756 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with unregistered email — Status: PASSED
+2026-06-26 14:18:42.867 [ForkJoinPool-2-worker-2] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with various invalid credentials combinations — Status: PASSED
+2026-06-26 14:18:45.060 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 14:18:45.175 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with empty email — Status: PASSED
+2026-06-26 14:18:46.384 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-4
+2026-06-26 14:18:46.533 [ForkJoinPool-2-worker-4] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Mobile login fails with empty password — Status: PASSED
+2026-06-26 14:18:46.851 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-26 15:02:59.671 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 15:02:59.722 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=MOBILE
+2026-06-26 15:03:00.211 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Berhasil mengakses halaman Ajukan Sakit
+2026-06-26 15:03:00.228 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 15:03:02.539 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 15:03:02.589 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 15:03:04.369 [ForkJoinPool-2-worker-3] WARN  com.bootcamp.group2.hooks.Hooks - Scenario FAILED: Berhasil mengakses halaman Ajukan Sakit — taking screenshot
+2026-06-26 15:03:04.492 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 15:03:04.636 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Berhasil mengakses halaman Ajukan Sakit — Status: FAILED
+2026-06-26 15:03:04.916 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-26 15:03:30.085 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 15:03:30.136 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=MOBILE
+2026-06-26 15:03:30.436 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Berhasil mengakses halaman Ajukan Sakit
+2026-06-26 15:03:30.441 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 15:03:31.846 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 15:03:31.901 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 15:03:34.625 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 15:03:34.733 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Berhasil mengakses halaman Ajukan Sakit — Status: PASSED
+2026-06-26 15:03:35.093 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-26 15:04:26.944 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-26 15:04:26.983 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=MOBILE
+2026-06-26 15:04:27.407 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Berhasil mengakses halaman Ajukan Sakit
+2026-06-26 15:04:27.415 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=MOBILE
+2026-06-26 15:04:29.038 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-26 15:04:29.100 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-26 15:04:31.829 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-26 15:04:31.991 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Berhasil mengakses halaman Ajukan Sakit — Status: PASSED
+2026-06-26 15:04:32.350 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished

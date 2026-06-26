@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.bootcamp.group2.runners.junit5.JUnit5Runner
+-------------------------------------------------------------------------------
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 17, Time elapsed: 6.056 s -- in com.bootcamp.group2.runners.junit5.JUnit5Runner
