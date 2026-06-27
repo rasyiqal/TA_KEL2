@@ -2,6 +2,7 @@ package com.bootcamp.group2.pages.mobile.dashboard;
 
 import com.bootcamp.group2.pages.BasePage;
 import com.bootcamp.group2.pages.mobile.koreksiabsen.MobileKoreksiAbsenPage;
+import com.bootcamp.group2.pages.mobile.lembur.MobileLemburPage;
 import com.bootcamp.group2.utils.WaitUtils;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -12,6 +13,7 @@ public class MobileDashboardPage extends BasePage {
 
     private final By greetingText     = By.xpath("//p[starts-with(normalize-space(), 'Hai,')]");
     private final By koreksiAbsenMenu = By.xpath("//a[contains(@class,'user__menu__item') and normalize-space()='Koreksi Absen']");
+    private final By lemburMenu       = By.xpath("//a[contains(@class,'user__menu__item') and normalize-space()='Lembur']");
 
     @Step("Check if mobile home page is loaded")
     public boolean isHomePageLoaded() {
@@ -48,6 +50,25 @@ public class MobileDashboardPage extends BasePage {
             throw e;
         }
         return new MobileKoreksiAbsenPage();
+    }
+
+    @Step("Click 'Lembur' from home menu")
+    public MobileLemburPage clickLembur() {
+        try {
+            org.openqa.selenium.WebElement menu = WaitUtils.waitForPresence(driver, lemburMenu);
+            try {
+                WaitUtils.waitForClickable(driver, lemburMenu);
+                menu.click();
+            } catch (Exception e) {
+                log.warn("Normal click failed or element intercepted, fallback to jsClick: {}", e.getMessage());
+                org.openqa.selenium.WebElement freshMenu = WaitUtils.waitForPresence(driver, lemburMenu);
+                jsClick(freshMenu);
+            }
+        } catch (Exception e) {
+            log.error("Lembur menu not found in DOM", e);
+            throw e;
+        }
+        return new MobileLemburPage();
     }
 
     public String getCurrentUrl() {

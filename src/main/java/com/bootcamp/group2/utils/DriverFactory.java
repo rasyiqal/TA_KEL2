@@ -129,8 +129,21 @@ public class DriverFactory {
             "--disable-gpu",
             "--disable-extensions",
             "--window-size=1920,1080",
-            "--remote-allow-origins=*"
+            "--remote-allow-origins=*",
+            "--disable-save-password-bubble",
+            "--disable-features=PasswordLeakDetection",
+            "--no-first-run",
+            "--disable-default-apps"
         );
+
+        java.util.Map<String, Object> prefs = new java.util.HashMap<>();
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
+        prefs.put("profile.password_manager_leak_detection", false);
+        prefs.put("profile.default_content_setting_values.notifications", 2);
+        options.setExperimentalOption("prefs", prefs);
+        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+
         return options;
     }
 }
