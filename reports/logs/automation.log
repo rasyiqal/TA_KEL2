@@ -1122,3 +1122,18 @@ Session ID: 6574776ebf151d540ed495749f1e9da5
 2026-06-28 15:55:17.702 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Berhasil mengajukan cuti — Status: PASSED
 2026-06-28 15:55:17.715 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Reset form cuti — Status: PASSED
 2026-06-28 15:55:17.903 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
+2026-06-28 15:57:50.512 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.ConfigManager - Loading configuration for environment: dev
+2026-06-28 15:57:50.565 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite started | env=dev | platform=WEB
+2026-06-28 15:57:50.839 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Reset form cuti
+2026-06-28 15:57:50.839 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Starting: Berhasil mengajukan cuti
+2026-06-28 15:57:50.840 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-28 15:57:50.840 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Initializing WebDriver | browser=chrome | headless=false | remote=false | platform=WEB
+2026-06-28 15:57:51.957 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-3
+2026-06-28 15:57:51.957 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - WebDriver successfully initialized for thread: ForkJoinPool-2-worker-1
+2026-06-28 15:57:52.032 [ForkJoinPool-2-worker-1] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-28 15:57:52.032 [ForkJoinPool-2-worker-3] INFO  c.b.group2.pages.mobile.login.MobileLoginPage - Opening URL: https://magang.dikahadir.com/absen/login
+2026-06-28 15:58:04.605 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-1
+2026-06-28 15:58:04.742 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Berhasil mengajukan cuti — Status: PASSED
+2026-06-28 15:58:05.114 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.utils.DriverFactory - Closing WebDriver for thread: ForkJoinPool-2-worker-3
+2026-06-28 15:58:05.241 [ForkJoinPool-2-worker-3] INFO  com.bootcamp.group2.hooks.Hooks - Finished: Reset form cuti — Status: PASSED
+2026-06-28 15:58:05.434 [ForkJoinPool-2-worker-1] INFO  com.bootcamp.group2.hooks.Hooks - Suite finished
