@@ -1,1 +1,8 @@
+com\bootcamp\group2\runners\testng\TestNGRunner.class
+com\bootcamp\group2\steps\ui\mobile\cuti\MobileMenuCutiSteps.class
+com\bootcamp\group2\steps\ui\web\login\WebLoginSteps.class
+com\bootcamp\group2\steps\ui\mobile\m_sakit\MobileMenuSakitSteps.class
+com\bootcamp\group2\runners\junit5\JUnit5Runner.class
+com\bootcamp\group2\steps\ui\mobile\login\MobileLoginSteps.class
 com\bootcamp\group2\hooks\Hooks$1.class
+com\bootcamp\group2\hooks\Hooks.class

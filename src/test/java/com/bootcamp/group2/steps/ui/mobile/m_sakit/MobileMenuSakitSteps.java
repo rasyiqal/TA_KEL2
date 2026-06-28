@@ -1,26 +1,40 @@
 package com.bootcamp.group2.steps.ui.mobile.m_sakit;
 
 import com.bootcamp.group2.pages.mobile.m_sakit.MobileMenuSakitPage;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 
 public class MobileMenuSakitSteps {
 
-    private MobileMenuSakitPage menuSakitPage;
+    private MobileMenuSakitPage sakitPage;
 
     @When("user clicks menu Sakit")
     public void userClicksMenuSakit() {
-        menuSakitPage = new MobileMenuSakitPage();
-        menuSakitPage.clickMenuSakit();
+        sakitPage = new MobileMenuSakitPage();
+        sakitPage.clickMenuSakit();
     }
 
-    @And("user clicks button Ajukan Sakit")
+    @When("user clicks button Ajukan Sakit")
     public void userClicksButtonAjukanSakit() {
-        menuSakitPage.clickAjukanSakit();
+        sakitPage.clickAjukanSakit();
     }
 
-    @And("user clicks Access Alarm icon")
-    public void userClicksAccessAlarmIcon() {
-        menuSakitPage.clickAccessAlarmIcon();
+    @When("user clicks Input Area")
+    public void userClicksInputArea() {
+        sakitPage.clickInputArea();
+    }
+
+    @When("user selects today as start date")
+    public void userSelectsTodayAsStartDate() {
+        sakitPage.pilihTanggalMulaiHariIni();
+    }
+
+    @When("user selects end date {int} days from today")
+    public void userSelectsEndDateDaysFromToday(int plusDays) {
+        sakitPage.pilihTanggalSelesaiPlusDays(plusDays);
+    }
+
+    @When("user clicks button Simpan")
+    public void userClicksButtonSimpan() {
+        sakitPage.clickSimpan();
     }
 }

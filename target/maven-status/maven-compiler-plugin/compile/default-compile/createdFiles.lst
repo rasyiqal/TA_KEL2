@@ -1,1 +1,14 @@
+com\bootcamp\group2\utils\ConfigManager.class
+com\bootcamp\group2\pages\mobile\cuti\MobileMenuCutiPage.class
+com\bootcamp\group2\utils\WaitUtils.class
+com\bootcamp\group2\pages\web\dashboard\WebDashboardPage.class
+com\bootcamp\group2\components\BaseComponent.class
+com\bootcamp\group2\pages\mobile\login\MobileLoginPage.class
+com\bootcamp\group2\pages\mobile\m_sakit\MobileMenuSakitPage.class
+com\bootcamp\group2\utils\ScreenshotUtils.class
+com\bootcamp\group2\pages\web\login\WebLoginPage.class
+com\bootcamp\group2\enums\Platform.class
+com\bootcamp\group2\pages\mobile\dashboard\MobileDashboardPage.class
+com\bootcamp\group2\pages\BasePage.class
+com\bootcamp\group2\utils\DriverFactory.class
 com\bootcamp\group2\utils\ConfigManager$1.class

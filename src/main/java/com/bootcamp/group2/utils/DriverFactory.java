@@ -131,6 +131,13 @@ public class DriverFactory {
             "--window-size=1920,1080",
             "--remote-allow-origins=*"
         );
+
+        java.util.Map<String, Object> prefs = new java.util.HashMap<>();
+        prefs.put("profile.password_manager_leak_detection", false);
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
+        options.setExperimentalOption("prefs", prefs);
+
         return options;
     }
 }

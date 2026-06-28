@@ -8,5 +8,7 @@ Feature: Mobile Menu Sakit
   Scenario: Berhasil mengakses halaman Ajukan Sakit
     When user clicks menu Sakit
     And user clicks button Ajukan Sakit
-    And user clicks Access Alarm icon
-
+    And user clicks Input Area
+    And user selects today as start date
+    And user selects end date 2 days from today
+    And user clicks button Simpan
