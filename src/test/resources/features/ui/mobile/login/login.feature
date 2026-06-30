@@ -12,4 +12,3 @@ Feature: Mobile Login — HADIR
   @smoke @loginPositive
   Scenario: Forgot Password button is visible on mobile login page
     Then the Forgot Password button is visible
-

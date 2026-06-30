@@ -46,6 +46,11 @@ public class WaitUtils {
             .until(ExpectedConditions.elementToBeClickable(locator));
     }
 
+    public static WebElement waitForClickable(WebDriver driver, By locator, int timeoutSeconds) {
+        return getWait(driver, timeoutSeconds)
+            .until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
     public static WebElement waitForClickable(WebDriver driver, WebElement element) {
         return getWait(driver, DEFAULT_TIMEOUT)
             .until(ExpectedConditions.elementToBeClickable(element));
@@ -68,6 +73,11 @@ public class WaitUtils {
 
     public static void waitForInvisible(WebDriver driver, By locator) {
         getWait(driver, DEFAULT_TIMEOUT)
+            .until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    }
+
+    public static void waitForInvisible(WebDriver driver, By locator, int timeoutSeconds) {
+        getWait(driver, timeoutSeconds)
             .until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 

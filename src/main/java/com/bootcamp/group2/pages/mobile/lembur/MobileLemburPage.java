@@ -1,6 +1,7 @@
 package com.bootcamp.group2.pages.mobile.lembur;
 
 import com.bootcamp.group2.pages.BasePage;
+import com.bootcamp.group2.pages.mobile.dashboard.MobileDashboardPage;
 import com.bootcamp.group2.utils.WaitUtils;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -58,9 +59,22 @@ public class MobileLemburPage extends BasePage {
         return this;
     }
 
-    @Step("Click 'Kembali' button")
-    public void clickKembali() {
+    @Step("Click 'Kembali' button to return to dashboard")
+    public MobileDashboardPage clickKembali() {
         click(kembaliBtn);
+        return new MobileDashboardPage();
+    }
+
+    /**
+     * Returns the visible text inside the open submission drawer.
+     * Useful for debugging form state after submit.
+     */
+    public String getDrawerText() {
+        try {
+            return driver.findElement(drawer).getText();
+        } catch (Exception e) {
+            return "[Drawer not found or closed]";
+        }
     }
 
     public boolean isDrawerOpen() {
@@ -209,6 +223,155 @@ public class MobileLemburPage extends BasePage {
 
     public boolean isFirstCardHasTanggalPengajuanInfo() {
         return getFirstCardText().contains("Tanggal Pengajuan :");
+    }
+
+    // ─── Duplicate submission alert ──────────────────────────────────────────
+
+    /**
+     * Alert role element that appears when a lembur for the same date is already pending.
+     * Message: "Permintaan request lembur anda sedang diproses validator 1"
+     */
+    private final By duplicateAlert = By.xpath(
+        "//*[@role='alert' and contains(normalize-space(),'sedang diproses')]"
+    );
+    private final By duplicateAlertCloseBtn = By.xpath(
+        "//*[@role='alert' and contains(normalize-space(),'sedang diproses')]//button"
+    );
+
+    /**
+     * Returns true if the duplicate-submission alert is currently visible.
+     * This appears when submitting a lembur whose date/time overlaps with an existing
+     * pending submission that has not yet been processed by the validator.
+     */
+    public boolean isDuplicateSubmissionAlertVisible() {
+        return WaitUtils.isElementPresent(driver, duplicateAlert);
+    }
+
+    /** Returns the duplicate alert message text (useful for logging). */
+    public String getDuplicateAlertMessage() {
+        try {
+            return WaitUtils.waitForVisible(driver, duplicateAlert, 3).getText().trim();
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+    /**
+     * Dismisses the duplicate-submission alert and closes the drawer.
+     * Call this when {@link #isDuplicateSubmissionAlertVisible()} returns true.
+     * The existing pending submission (same date) will be used for the E2E flow.
+     */
+    public MobileLemburPage dismissDuplicateAlert() {
+        By backdrop = By.cssSelector(".MuiBackdrop-root");
+
+        // 1. Close the alert snackbar via its close button
+        try {
+            WaitUtils.waitForClickable(driver, duplicateAlertCloseBtn, 3).click();
+            WaitUtils.waitForInvisible(driver, duplicateAlert, 5);
+        } catch (Exception e) {
+            log.warn("Could not close duplicate alert button: {}", e.getMessage());
+        }
+
+        // 2. Send Escape to trigger drawer close
+        try {
+            driver.findElement(By.tagName("body")).sendKeys(org.openqa.selenium.Keys.ESCAPE);
+        } catch (Exception e) {
+            log.warn("Escape key failed: {}", e.getMessage());
+        }
+
+        // 3. If backdrop is still present, jsClick it to force-dismiss the drawer
+        //    (regular click fails when backdrop has aria-hidden="true" and intercepts events)
+        try {
+            if (WaitUtils.isElementPresent(driver, backdrop)) {
+                jsClick(driver.findElement(backdrop));
+            }
+        } catch (Exception e) {
+            log.warn("jsClick on backdrop failed: {}", e.getMessage());
+        }
+
+        // 4. Wait until the backdrop is fully gone before returning —
+        //    ensures the caller (clickKembali etc.) won't be intercepted
+        try {
+            WaitUtils.waitForInvisible(driver, backdrop, 8);
+        } catch (Exception e) {
+            log.warn("Backdrop still visible after all dismiss attempts: {}", e.getMessage());
+        }
+
+        return this;
+    }
+
+    // ─── Status checks ───────────────────────────────────────────────────────
+
+    /**
+     * Returns the status value from the first lembur card.
+     *
+     * <p>Mobile cards display status as a text line: {@code "Status : Menunggu Approval"}.
+     * This method extracts just the value after the colon. Falls back to scanning
+     * the full card text if the pattern is not found.</p>
+     */
+    /**
+     * Returns the status value from the first lembur card.
+     *
+     * <p>Pending cards display: {@code "Status : Menunggu Approval"} (value on same line).<br>
+     * Approved cards may display the value on the NEXT non-empty line.</p>
+     */
+    public String getFirstCardStatusText() {
+        try {
+            WebElement card = WaitUtils.waitForVisible(driver, overtimeCards);
+            String[] lines = card.getText().split("\n");
+            for (int i = 0; i < lines.length; i++) {
+                String trimmed = lines[i].trim();
+                if (trimmed.toLowerCase().startsWith("status:") || trimmed.toLowerCase().startsWith("status :")) {
+                    String value = trimmed.replaceFirst("(?i)status\\s*:\\s*", "").trim();
+                    if (!value.isEmpty()) return value;
+                    // Value is on the next non-empty line
+                    for (int j = i + 1; j < lines.length; j++) {
+                        String next = lines[j].trim();
+                        if (!next.isEmpty() && !next.toLowerCase().startsWith("approved by")) {
+                            return next;
+                        }
+                    }
+                    return "-";
+                }
+            }
+            return "";
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+    /**
+     * Returns true if the first card's status indicates it is awaiting approval.
+     * Covers: "Menunggu Approval" (mobile), "PENDING" (web admin badge).
+     */
+    public boolean isFirstCardStatusPending() {
+        String status = getFirstCardStatusText().toLowerCase();
+        return status.contains("menunggu") || status.contains("pending");
+    }
+
+    /**
+     * Returns true if the first card's status indicates it has been approved.
+     * Covers: "Disetujui" (Indonesian), "Approved" (English).
+     */
+    public boolean isFirstCardStatusApproved() {
+        String status = getFirstCardStatusText().toLowerCase();
+        return status.contains("disetujui") || status.contains("approved");
+    }
+
+    /**
+     * Returns true if the first card's status indicates it has been rejected.
+     * Covers: "Ditolak" (Indonesian), "Rejected" (English).
+     */
+    public boolean isFirstCardStatusRejected() {
+        String status = getFirstCardStatusText().toLowerCase();
+        return status.contains("ditolak") || status.contains("rejected");
+    }
+
+    /** Refreshes the page to get the latest status from the server. */
+    public MobileLemburPage refresh() {
+        driver.navigate().refresh();
+        WaitUtils.waitForVisible(driver, pageTitle);
+        return this;
     }
 
     public boolean isOnLemburPage() {

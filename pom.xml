@@ -468,6 +468,38 @@
             </build>
         </profile>
 
+        <!-- ============================================================ -->
+        <!--  Profile: E2E Tests (sequential — single browser session)    -->
+        <!--  Usage: mvn test -Pe2e                                        -->
+        <!--                                                               -->
+        <!--  Uses JUnit5E2ERunner which sets parallel=false via           -->
+        <!--  @ConfigurationParameter — the highest-precedence override    -->
+        <!--  in JUnit Platform (above system props + .properties file).   -->
+        <!-- ============================================================ -->
+        <profile>
+            <id>e2e</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${maven.surefire.plugin.version}</version>
+                        <configuration>
+                            <!-- Point exclusively at the E2E runner (not the generic JUnit5Runner) -->
+                            <includes>
+                                <include>**/runners/junit5/JUnit5E2ERunner.java</include>
+                            </includes>
+                            <systemPropertyVariables>
+                                <allure.results.directory>
+                                    ${project.build.directory}/allure-results
+                                </allure.results.directory>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
     </profiles>
 
 </project>

@@ -1,6 +1,7 @@
 package com.bootcamp.group2.pages.mobile.koreksiabsen;
 
 import com.bootcamp.group2.pages.BasePage;
+import com.bootcamp.group2.pages.mobile.dashboard.MobileDashboardPage;
 import com.bootcamp.group2.utils.WaitUtils;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -57,9 +58,10 @@ public class MobileKoreksiAbsenPage extends BasePage {
         return this;
     }
 
-    @Step("Click 'Kembali' button")
-    public void clickKembali() {
+    @Step("Click 'Kembali' button to return to dashboard")
+    public MobileDashboardPage clickKembali() {
         click(kembaliBtn);
+        return new MobileDashboardPage();
     }
 
     public boolean isDrawerOpen() {
@@ -174,19 +176,6 @@ public class MobileKoreksiAbsenPage extends BasePage {
         return extractCardField(0, "Jam keluar");
     }
 
-    public String getFirstCardStatus() {
-        List<WebElement> cards = driver.findElements(correctionCards);
-        if (cards.isEmpty()) return "-";
-        try {
-            WebElement statusBox = cards.get(0).findElement(
-                By.xpath(".//div[contains(@class,'MuiBox-root') and contains(.,'status')]")
-            );
-            return statusBox.getText().replace("status:", "").trim();
-        } catch (Exception e) {
-            return "-";
-        }
-    }
-
     public boolean isFirstCardHasUserName() {
         return getFirstCardText().contains("Hadir");
     }
@@ -201,6 +190,140 @@ public class MobileKoreksiAbsenPage extends BasePage {
 
     public boolean isFirstCardHasStatusInfo() {
         return getFirstCardText().toLowerCase().contains("status");
+    }
+
+    // ─── Duplicate submission alert ──────────────────────────────────────────
+
+    /**
+     * Alert that appears when submitting a koreksi for a date that already has a
+     * pending submission being processed. Message pattern: "sedang diproses".
+     */
+    private final By duplicateAlert = By.xpath(
+        "//*[@role='alert' and contains(normalize-space(),'sedang diproses')]"
+    );
+    private final By duplicateAlertCloseBtn = By.xpath(
+        "//*[@role='alert' and contains(normalize-space(),'sedang diproses')]//button"
+    );
+
+    /**
+     * Returns true if the duplicate-submission alert is currently visible.
+     */
+    public boolean isDuplicateSubmissionAlertVisible() {
+        return WaitUtils.isElementPresent(driver, duplicateAlert);
+    }
+
+    /** Returns the duplicate alert message text (useful for logging). */
+    public String getDuplicateAlertMessage() {
+        try {
+            return WaitUtils.waitForVisible(driver, duplicateAlert, 3).getText().trim();
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+    /**
+     * Dismisses the duplicate-submission alert and closes the drawer.
+     * Call this when {@link #isDuplicateSubmissionAlertVisible()} returns true.
+     */
+    public MobileKoreksiAbsenPage dismissDuplicateAlert() {
+        By backdrop = By.cssSelector(".MuiBackdrop-root");
+
+        // 1. Close the alert snackbar via its close button
+        try {
+            WaitUtils.waitForClickable(driver, duplicateAlertCloseBtn, 3).click();
+            WaitUtils.waitForInvisible(driver, duplicateAlert, 5);
+        } catch (Exception e) {
+            log.warn("Could not close duplicate alert button: {}", e.getMessage());
+        }
+
+        // 2. Send Escape to trigger drawer close
+        try {
+            driver.findElement(By.tagName("body")).sendKeys(org.openqa.selenium.Keys.ESCAPE);
+        } catch (Exception e) {
+            log.warn("Escape key failed: {}", e.getMessage());
+        }
+
+        // 3. If backdrop is still present, jsClick it to force-dismiss the drawer
+        //    (regular click fails when backdrop has aria-hidden="true" and intercepts events)
+        try {
+            if (WaitUtils.isElementPresent(driver, backdrop)) {
+                jsClick(driver.findElement(backdrop));
+            }
+        } catch (Exception e) {
+            log.warn("jsClick on backdrop failed: {}", e.getMessage());
+        }
+
+        // 4. Wait until the backdrop is fully gone before returning
+        try {
+            WaitUtils.waitForInvisible(driver, backdrop, 8);
+        } catch (Exception e) {
+            log.warn("Backdrop still visible after all dismiss attempts: {}", e.getMessage());
+        }
+
+        return this;
+    }
+
+    // ─── Status checks ───────────────────────────────────────────────────────
+
+    /**
+     * Returns the status value from the first koreksi card.
+     *
+     * <p>Koreksi cards display status as a text line: {@code "status:-"} or
+     * {@code "status:Approved"} (lowercase, no spaces). This method scans the
+     * card's text line-by-line and extracts the value after the colon.</p>
+     */
+    /**
+     * Returns the status value from the first koreksi card.
+     *
+     * <p>Pending cards display: {@code "status:-"} (value on same line).<br>
+     * Approved/rejected cards display the value on the NEXT non-empty line:
+     * {@code "status:\n\nApproved"} or {@code "status:\n\nDitolak"}.</p>
+     */
+    public String getFirstCardStatusText() {
+        try {
+            WebElement card = WaitUtils.waitForVisible(driver, correctionCards);
+            String[] lines = card.getText().split("\n");
+            for (int i = 0; i < lines.length; i++) {
+                String trimmed = lines[i].trim();
+                if (trimmed.toLowerCase().startsWith("status:") || trimmed.toLowerCase().startsWith("status :")) {
+                    String value = trimmed.replaceFirst("(?i)status\\s*:\\s*", "").trim();
+                    if (!value.isEmpty()) return value;
+                    // Value is on the next non-empty line (e.g. "Approved", "Ditolak")
+                    for (int j = i + 1; j < lines.length; j++) {
+                        String next = lines[j].trim();
+                        // Skip empty lines and "Approved by" (a separate field)
+                        if (!next.isEmpty() && !next.toLowerCase().startsWith("approved by")) {
+                            return next;
+                        }
+                    }
+                    return "-"; // no value found after status label
+                }
+            }
+            return "";
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+
+
+    /** Returns true if the first card's status indicates it has been approved. */
+    public boolean isFirstCardStatusApproved() {
+        String status = getFirstCardStatusText().toLowerCase();
+        return status.contains("approved") || status.contains("disetujui");
+    }
+
+    /** Returns true if the first card's status indicates it has been rejected. */
+    public boolean isFirstCardStatusRejected() {
+        String status = getFirstCardStatusText().toLowerCase();
+        return status.contains("rejected") || status.contains("ditolak");
+    }
+
+    /** Refreshes the page to get the latest status from the server. */
+    public MobileKoreksiAbsenPage refresh() {
+        driver.navigate().refresh();
+        WaitUtils.waitForVisible(driver, pageTitle);
+        return this;
     }
 
     public boolean isOnKoreksiAbsenPage() {
